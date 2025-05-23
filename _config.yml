@@ -104,4 +104,5 @@ theme: butterfly
 deploy:
   type: git
   repo: git@github.com:koocuu/koocuu-blog.git
-  branch: gh-pages
+  branch: master
+  ignore_hidden: false # 确保 .nojekyll 文件被部署
