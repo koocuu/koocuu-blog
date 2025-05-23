@@ -1,0 +1,103 @@
+# ===============================================================
+# 主题核心配置
+# ===============================================================
+
+scheme: gemini # Muse / Mist / Pisces / Gemini
+
+# 暗色模式
+darkmode: false
+
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-folder-open
+  about: /about/ || fa fa-user
+
+menu_settings:
+  icons: true
+  badges: false
+
+# 侧边栏设置
+sidebar:
+  position: left
+  display: post
+  padding: 18
+  offset: 12
+
+# 头像设置
+avatar:
+  url: /images/avatar.png
+  rounded: true
+  rotated: false
+
+# 社交链接
+social:
+  GitHub: https://github.com/yourname || fab fa-github
+  E-Mail: mailto:your@email.com || fa fa-envelope
+  #Weibo: https://weibo.com/yourname || fab fa-weibo
+  #Twitter: https://twitter.com/yourname || fab fa-twitter
+  #FB Page: https://www.facebook.com/yourname || fab fa-facebook
+  #YouTube: https://youtube.com/yourname || fab fa-youtube
+
+social_icons:
+  enable: true
+  icons_only: false
+  transition: false
+
+# 文章设置
+post_meta:
+  item_text: true
+  created_at: true
+  updated_at: true
+  categories: true
+  tags: true
+
+# 相关文章推荐
+related_posts:
+  enable: true
+  title: 相关文章
+  display_in_home: false
+
+# 代码块设置
+codeblock:
+  theme:
+    light: github
+    dark: github-dark
+  copy_button:
+    enable: true
+    show_result: true
+    style: default
+
+# 回到顶部按钮
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
+# 阅读进度条
+reading_progress:
+  enable: true
+  position: top
+  color: "#37c6c0"
+  height: 3px
+
+# 页脚设置
+footer:
+  since: 2024
+  icon:
+    name: fa fa-heart
+    animated: true
+    color: "#ff0000"
+  copyright: ''
+
+# 动画效果
+motion:
+  enable: true
+  async: false
+  transition:
+    post_block: fadeIn
+    post_header: fadeInDown
+    post_body: fadeInDown
+    coll_header: fadeInLeft
+    sidebar: fadeInUp 

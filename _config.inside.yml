@@ -1,0 +1,91 @@
+# 主题基本配置
+appearance:
+  # 深色模式
+  dark_mode: auto # light/dark/auto
+  # 主题色
+  accent_color: '#2a2b33'
+  # 字体
+  font:
+    url: //fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap
+    base: "'Noto Serif SC', 'Noto Serif CJK SC', serif"
+    logo: "'Noto Serif SC', serif"
+    menu: "'Noto Serif SC', serif"
+    heading: "'Noto Serif SC', serif"
+    label: "'Noto Serif SC', serif"
+    code: "Cascadia Code, consolas, Menlo, monospace"
+
+# 导航菜单配置
+menu:
+  首页: /
+  归档: /archives
+  分类: /categories
+  标签: /tags
+  关于: /about
+
+# 个人信息
+profile:
+  email: your@email.com
+  bio: 个人简介
+  avatar: /avatar.jpg
+  social:
+    github: https://github.com/your-username
+    twitter: https://twitter.com/your-username
+
+# 文章配置
+post:
+  # 文章目录
+  toc:
+    depth: 3
+    index: true
+  # 相关文章
+  related:
+    enable: true
+    limit: 5
+
+# 搜索配置
+search:
+  enable: true
+  service: hexo # hexo/google/algolia/azure/baidu
+
+# 评论系统
+comments:
+  enable: false
+  service: disqus # disqus/gitalk/livere/valine/waline
+  disqus:
+    shortname: your-disqus-shortname
+
+# 页脚配置
+footer:
+  # 显示"由 Hexo 强力驱动"
+  powered: true
+  # 显示主题信息
+  theme: true
+  # 自定义版权信息
+  copyright: ''
+
+# 侧边栏配置
+sidebar:
+  # 位置
+  position: left # left/right
+  # 宽度
+  width: 256
+  # 背景色
+  background: '#f5f7fa'
+
+# 动画效果
+animate: true
+
+# 代码高亮主题
+highlight:
+  theme: default # default/darker/pale night/light/ocean
+  copy: true # 启用复制按钮
+  lang: true # 显示代码语言
+
+# 页面布局
+layout:
+  # 文章列表布局
+  post: side # side/wide
+  # 页面最大宽度
+  page_width: 800
+  # 内容区域最大宽度
+  content_width: 640 
