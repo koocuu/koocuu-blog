@@ -166,4 +166,81 @@ frame_preset: true
 inject:
   head:
     - '<style type="text/css">.page-header{display:none!important}.top-img{display:none!important}.page-title{display:none!important}.site-page{display:none!important}.site-name{display:none!important}#page-header{display:none!important}body{background:transparent!important}</style>'
-    - '<base target="_parent">' 
+    - '<base target="_self">'
+    - '<script>
+      // 检查是否在iframe中
+      if (window.self !== window.top) {
+        // 在文档加载完成后执行
+        document.addEventListener("DOMContentLoaded", function() {
+          // 修改所有链接
+          function modifyLinks() {
+            document.querySelectorAll("a").forEach(function(link) {
+              // 保留某些特殊链接（如下载链接）的原始行为
+              if (!link.getAttribute("download") && !link.getAttribute("target")) {
+                link.target = "_self";
+                // 添加点击事件监听器
+                link.addEventListener("click", function(e) {
+                  // 如果是外部链接，阻止默认行为
+                  if (this.hostname !== window.location.hostname) {
+                    e.preventDefault();
+                    // 在iframe内打开链接
+                    window.location.href = this.href;
+                  }
+                });
+              }
+            });
+          }
+
+          // 初始修改
+          modifyLinks();
+
+          // 拦截动态添加的链接
+          const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              mutation.addedNodes.forEach(function(node) {
+                if (node.nodeType === 1) { // 元素节点
+                  const links = node.getElementsByTagName("a");
+                  Array.from(links).forEach(function(link) {
+                    if (!link.getAttribute("download") && !link.getAttribute("target")) {
+                      link.target = "_self";
+                      // 添加点击事件监听器
+                      link.addEventListener("click", function(e) {
+                        // 如果是外部链接，阻止默认行为
+                        if (this.hostname !== window.location.hostname) {
+                          e.preventDefault();
+                          // 在iframe内打开链接
+                          window.location.href = this.href;
+                        }
+                      });
+                    }
+                  });
+                }
+              });
+            });
+          });
+
+          // 观察整个文档的变化
+          observer.observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+
+          // 处理所有链接的点击事件
+          document.addEventListener("click", function(e) {
+            let target = e.target;
+            // 向上查找最近的a标签
+            while (target && target.tagName !== "A") {
+              target = target.parentElement;
+            }
+            if (target && target.tagName === "A") {
+              // 如果是外部链接，阻止默认行为
+              if (target.hostname !== window.location.hostname) {
+                e.preventDefault();
+                // 在iframe内打开链接
+                window.location.href = target.href;
+              }
+            }
+          }, true);
+        });
+      }
+    </script>' 
