@@ -165,7 +165,22 @@ frame_preset: true
 # 自定义样式注入
 inject:
   head:
-    - '<style type="text/css">.page-header{display:none!important}.top-img{display:none!important}.page-title{display:none!important}.site-page{display:none!important}.site-name{display:none!important}#page-header{display:none!important}body{background:transparent!important}</style>'
+    - '<style type="text/css">
+      .page-header{display:none!important}
+      .top-img{display:none!important}
+      .page-title{display:none!important}
+      .site-page{display:none!important}
+      .site-name{display:none!important}
+      #page-header{display:none!important}
+      body{background:transparent!important}
+      #content-inner{margin-top:10px!important;padding-top:0!important}
+      #content{margin-top:10px!important;padding-top:0!important}
+      .layout{margin-top:10px!important;padding-top:0!important}
+      .main-content{margin-top:10px!important;padding-top:0!important}
+      .post-title{margin-top:0!important;padding-top:0!important}
+      .post-meta{margin-top:0!important;padding-top:0!important}
+      .post-content{margin-top:0!important;padding-top:0!important}
+      </style>'
     - '<base target="_self">'
     - '<script>
       // 检查是否在iframe中
