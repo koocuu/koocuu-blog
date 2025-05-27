@@ -71,7 +71,7 @@ aside:
       enable: true
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/yourname
+      link: https://github.com/koocuu
   card_announcement:
     enable: true
     content: 欢迎来到我的博客！
@@ -258,4 +258,6 @@ inject:
           }, true);
         });
       }
-    </script>' 
+    </script>'
+avatar:
+  img: /avatar.png 
